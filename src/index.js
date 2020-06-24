@@ -12,7 +12,7 @@ const semver = require('semver')
 const extendConf = function (api, conf) {
   let envName = '.env' // default name
 
-  const nameEnv = null
+  let nameEnv = null
 
   // Get the file name of the environment if the param --env or -e was informed
   process.argv.forEach((v, k) => {
