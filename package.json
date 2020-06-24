@@ -23,10 +23,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/quasarframework/app-extension-dotenv.git"
+    "url": "git+https://github.com/lucasveronezzi/app-extension-dotenv.git"
   },
-  "bugs": "https://github.com/quasarframework/app-extension-dotenv/issues",
-  "homepage": "https://github.com/quasarframework/app-extension-dotenv",
+  "bugs": "https://github.com/lucasveronezzi/app-extension-dotenv/issues",
+  "homepage": "https://github.com/lucasveronezzi/app-extension-dotenv",
   "keywords": [
     "quasar",
     "app",
