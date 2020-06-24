@@ -46,9 +46,12 @@ module.exports = function (api) {
     //     data.push(envName)
     //   }
     // })
+  
+    data.push("# Quasar Plugin dotenv")
     data.push(".env")
     data.push(".env.*")
     data.push("!.env.*.example")
+    
     // rejoin array to string
     data = data.join('\n')
     // convert to buffer
