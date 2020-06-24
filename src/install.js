@@ -40,12 +40,15 @@ module.exports = function (api) {
     // convert to array
     let data = buffer.split('\n')
     // iterate env files
-    envFiles.forEach((envName) => {
-      // See if the .env file already exists in .gitignore
-      if (!data.includes(envName)) {
-        data.push(envName)
-      }
-    })
+    // envFiles.forEach((envName) => {
+    //   // See if the .env file already exists in .gitignore
+    //   if (!data.includes(envName)) {
+    //     data.push(envName)
+    //   }
+    // })
+    data.push(".env")
+    data.push(".env.*")
+    data.push("!.env.*.example")
     // rejoin array to string
     data = data.join('\n')
     // convert to buffer
