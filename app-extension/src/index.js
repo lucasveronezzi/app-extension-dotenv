@@ -12,16 +12,30 @@ const semver = require('semver')
 const extendConf = function (api, conf) {
   let envName = '.env' // default name
 
-  // get .env name based on dev or production
-  if (conf.ctx.dev === true) {
-    // your prompt data is in api.prompts
-    if (api.prompts.env_development) {
-      envName = api.prompts.env_development
+  const nameEnv = null
+
+  // Get the file name of the environment if the param --env or -e was informed
+  process.argv.forEach((v, k) => {
+    if (v.indexOf('--env') === 0 || v.indexOf('-e') === 0) {
+      nameEnv = process.argv[k + 1]
     }
-  }
-  else {
-    if (api.prompts.env_production) {
-      envName = api.prompts.env_production
+  })
+
+  // If the file name was informed, i will use that, otherwise i use from ctx.dev (default of this plugin)
+  if (nameEnv) {
+    envName = nameEnv
+  } else {
+    // get .env name based on dev or production
+    if (conf.ctx.dev === true) {
+      // your prompt data is in api.prompts
+      if (api.prompts.env_development) {
+        envName = api.prompts.env_development
+      }
+    }
+    else {
+      if (api.prompts.env_production) {
+        envName = api.prompts.env_production
+      }
     }
   }
 
